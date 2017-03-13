@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+       <title>Examen amb autocorrecció</title>
+       <meta charset="UTF-8">
+       <meta name="description" content="Examen d'exemple amb possibilitat d'autocorrecció">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel='stylesheet' media='screen and (min-width: 961px)' href='css/examend.css'>
+       <link rel='stylesheet' media='screen and (max-width: 960px)' href='css/examenm.css'>
+       <script src="js/examen.js"></script>
+   </head>
+   <body>
+       <header>
+            <div>             
+                <a href='examen_local.html'><img src="img/huni2.png" alt="Hollywood University"></a>
+            </div>
+            <div>             
+                <span id = "reloj"></span>
+            </div>
+            <div>
+                <span id = "nota"></span>
+            </div>
+<!--            <p id='mostrar'></p>     -->
+       </header>   
+       <div class='examen'>
+           <form id='myexam' method='get'>
+            <fieldset>
+                <legend class="leyenda">Test your knowledge</legend>
+<!-- Question 1 TEXT -->
+                <p class='question impar' id='q0'></p>
+                <div class='text'>
+                    <label>Your answer: <input type='text' id='text_1' name='text_1'/></label>
+                    <br/>
+                </div>	
+                <img class="correction" id="cor_text_1" src='#' alt="text_1">
+                <span class="solution" id="sol_text_1"></span>
+                <br/>
+                <!-- Question 2 SELECT -->
+                <p class='question par' id='q1'></p>
+                <div class='list'>
+                    <label>Your answer: 
+                        <select id='select_1' name='select_1'> 
+                            <!--<option value="0"></option>-->
+                        </select>        
+                    </label>    
+                    <br>
+                </div>
+                <img class="correction" id="cor_select_1" src='#' alt="select_1">
+                <span class="solution" id="sol_select_1"></span>
+                <br/>
+<!-- Question 3 MULTIPLE -->
+                <p class='question impar' id='q2'></p>
+                <div class='mlist'>
+                    <label></label>
+                    <select multiple id='multiple_1' name="multiple_1" size="8"> 
+                        <!--<option value="0"></option>-->
+                    </select>        
+                    <br>
+                </div>
+                <img class="correction" id="cor_multiple_1" src='#' alt="multiplet_1">
+                <span class="solution" id="sol_multiple_1"></span>
+                <br/>
+<!-- Question 4 RADIO -->
+                <p class='question par' id='q3'></p>
+                <div class='radio' id="radio_1">
+                    <!--<input type='radio' name='radio_1' id='radio_1_0' value='0' /><label>AA</label>
+                </div>
+                <div class='radio'>  
+                    <input type='radio' name='radio_1' id='radio_1_1' value='1' /><label>BB</label>-->
+                </div>   
+                <img class="correction" id="cor_radio_1" src='#' alt="radio_1">
+                <span class="solution" id="sol_radio_1"></span>
+                <br/>   
+<!-- Question 5 CHECKBOX -->
+                <p class='question impar' id='q4'></p>
+                <div class='checkbox' id="checkbox_1">
+                    <!--<input type='checkbox' name='checkbox_1' id='checkbox_1_0' value='0' /><label>AAA</label>
+                </div>
+                <div class='checkbox'>
+                    <input type='checkbox' name='checkbox_1' id='checkbox_1_1' value='1' /><label>BBB</label>-->
+                </div>     
+                <img class="correction" id="cor_checkbox_1" src='#' alt="checkbox_1">
+                <span class="solution" id="sol_checkbox_1"></span>
+                <br/>
+<!-- Question 6 TEXT -->
+                <p class='question par' id='q5'></p>
+                <div class='text'>
+                    <label>Your answer: <input type='text' id='text_2' name='text_2'/></label>
+                    <br/>
+                </div>
+                <img class="correction" id="cor_text_2" src='#' alt="text_2">
+                <span class="solution" id="sol_text_2"></span>
+                <br/>
+<!-- Question 7 SELECT -->
+                <p class='question impar' id='q6'></p>
+                <div class='list'>
+                    <label>Your answer: 
+                        <select id='select_2' name="select_2"> 
+<!--                        <option value="0"></option>-->
+                        </select>        
+                    </label>    
+                    <br>
+                </div>
+                <img class="correction" id="cor_select_2" src='#' alt="select_2">
+                <span class="solution" id="sol_select_2"></span>
+                <br/>
+<!-- Question 8 MULTIPLE -->
+                <p class='question par' id='q7'></p>
+                <div class='mlist'>
+                    <label></label>
+                    <select multiple id="multiple_2" name="multiple_2" size="8"> 
+                        <!--<option value="0"></option>-->
+                    </select>        
+                    <br>
+                </div>
+                <img class = "correction" id="cor_multiple_2" src='#' alt="multiple_2">
+                <span class = "solution" id="sol_multiple_2"></span>
+                <br/>
+<!-- Question 9 RADIO -->
+                <p class = 'question impar' id='q8'></p>
+                <div class = 'radio' id="radio_2">
+                    <!--<label><input type='radio' name='radio_2' id='radio_2_0' value='0' /></label>
+                </div>
+                <div class='radio'>
+                    <label><input type='radio' name='radio_2' id='radio_2_1' value='1' /></label>-->
+                </div>    
+                <img class = "correction" id="cor_radio_2" src='#' alt="radio_2">
+                <span class = "solution" id="sol_radio_2"></span>
+                <br/>
+<!-- Question 10 CHECKBOX -->
+                <p class = 'question par' id='q9'></p>
+                <div class = 'checkbox' id="checkbox_2">
+                    <!--<label><input type='checkbox' name='checkbox_2' id='checkbox_2_0' value='0' /></label>
+                </div>
+                <div class='checkbox'>
+                    <label><input type='checkbox' name='checkbox_2' id='checkbox_2_1' value='1' /></label>-->
+                </div>     
+                <img class = "correction" id="cor_checkbox_2" src='#' alt="checkbox_2">
+                <span class = "solution" id="sol_checkbox_2"></span>
+                <br/>
+                <br/>    
+<!-- SUBMIT button -->
+                <input class = 'submit' type='submit' value='Score'>
+            </fieldset>
+           </form>
+<!--           <div class = 'panel'>
+           </div>    -->
+<!-- class examen -->
+       </div>       
+    </body>
+</html>
