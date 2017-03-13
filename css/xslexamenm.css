@@ -1,0 +1,33 @@
+table{
+  width:100%;
+  border:1px solid;
+} 
+
+th{
+  //background-color:#cdd8f6;
+  background-color:lightblue;
+  color:darkblue;
+} 
+
+td,tr,th{
+  border:1px solid;
+  padding:2px;
+  vertical-align:top;
+} 
+
+span{
+  color:green;
+  padding-left:5px;
+}
+.correct{
+  color:green;
+  font-weight:bolder;    
+}
+
+.incorrect{
+  color:red;
+}
+
+img {
+    display:inline-block;
+}
