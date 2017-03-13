@@ -1,4 +1,4 @@
-﻿// **********************************
+// **********************************
 //      DEFINICION de VARIABLES
 // **********************************
 // número de preguntas de examen.xml
@@ -164,13 +164,13 @@ function check_if_all_answers() {
     check_if_answerText('text_1', '1');	
     check_if_answerSelect('select_1', '2');	
     check_if_answerMultiple('multiple_1', '3');	
-    //check_if_answerRadio('radio_1', '4');	
-    //check_if_answerCheckbox('checkbox_1', '5');	
+    check_if_answerRadio('radio_1', '4');	
+    check_if_answerCheckbox('checkbox_1', '5');	
     check_if_answerText('text_2', '6');	
     check_if_answerSelect('select_2', '7');	
     check_if_answerMultiple('multiple_2', '8');	
-    //check_if_answerRadio('radio_2', '9');	
-    //check_if_answerCheckbox('checkbox_2', '10');	
+    check_if_answerRadio('radio_2', '9');	
+    check_if_answerCheckbox('checkbox_2', '10');	
 }
 
 function ammend_pnr_counter(pntr) {
@@ -217,7 +217,7 @@ function check_if_answerMultiple(form_elem, nump) {
 
 function check_if_answerRadio(form_elem, nump) {
     ans_radio = false;
-	radio_i = document.getElementById(frm_elem);
+	radio_i = document.getElementById(form_elem);
 	radio_a = radio_i.getElementsByTagName('input');
 	radio_a_length = radio_a.length;
 	for (i = 0; i < radio_a_length; i++) {
@@ -232,7 +232,7 @@ function check_if_answerRadio(form_elem, nump) {
 
 function check_if_answerCheckbox(form_elem, nump) {
     ans_checkbox = false;
-	checkbox_i = document.getElementById(frm_elem);
+	checkbox_i = document.getElementById(form_elem);
     checkbox_a = checkbox_i.getElementsByTagName('input');
 	checkbox_a_length = checkbox_a.length;
 	for (i = 0; i < checkbox_a_length; i++) {
