@@ -34,6 +34,11 @@
 	</xsl:for-each>
 	<xsl:for-each select="option">
 	  <xsl:variable name="optposition" select="position()-1"/>
+
+          <xsl:variable name="optiontext" select="text()"/>
+	  <xsl:if test="$optiontext!=''">
+
+
 	  <xsl:value-of select="text()"/>
 	  <xsl:for-each select="../answer">
 	    <xsl:variable name="correctanswer" select="text()"/>
@@ -43,6 +48,9 @@
 	    </xsl:if>
 	  </xsl:for-each>
           <br/>
+
+	  </xsl:if>
+
 	</xsl:for-each>
       </td>
       <td>
