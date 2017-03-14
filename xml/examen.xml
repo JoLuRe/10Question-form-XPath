@@ -83,11 +83,12 @@
     <question id='item6'>
         <type>select</type>
         <title>7. Nacionalidad?</title>
+        <option></option>
         <option>a) Sueca</option>
         <option>b) Americana</option>
         <option>c) Canadiense</option>
         <option>d) Emigrante rusa</option>
-        <answer>1</answer> <!-- 0, 1, 2, 3 -->
+        <answer>2</answer> <!-- 0, 1, 2, 3 -->
     </question>
     
 <!-- select MULTIPLE type questions -->    
