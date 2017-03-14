@@ -17,11 +17,12 @@
     <question id='item1'>
         <type>select</type>
         <title>2. Medidas?</title>
+        <option></option>
         <option>a) 60-90-60</option>
         <option>b) 90-69-90</option> 
         <option>c) 90-60-90</option>
         <option>d) 96-69-96</option>        
-        <answer>2</answer> <!-- 0, 1, 2, 3 -->
+        <answer>3</answer> <!-- 0, 1, 2, 3 -->
     </question>
 
 <!-- select MULTIPLE type questions -->    
