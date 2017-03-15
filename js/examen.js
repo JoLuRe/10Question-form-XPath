@@ -1,4 +1,4 @@
-// **********************************
+﻿// **********************************
 //      DEFINICION de VARIABLES
 // **********************************
 // número de preguntas de examen.xml
@@ -245,27 +245,6 @@ function check_if_answerCheckbox(form_elem, nump) {
     }
 }
 
-//function check_if_all_answers() {
-//   var f=formElement;
-//   var all_answered = false;
-//   for (i = 0; i < f.color.length; i++) {  //"color" es el nombre asignado a todos los checkbox
-//      if (f.color[i].checked) all_answered = true;
-//   }
-//   if (f.elements[0].value == "") {
-//    f.elements[0].focus();
-//    alert("Escribe un número");
-//    return false;
-//   } else if (f.elements[1].selectedIndex==0) {
-//    f.elements[1].focus();
-//    alert("Selecciona una opción");
-//    return false;
-//   } if (!all_answered) {    
-//    document.getElementsByTagName("h3")[2].focus();
-//    alert("Selecciona una opción del checkbox");
-//    return false;
-//   } else  return true;
-//}
-
 function doCorrect() {
     resetPuntuacion();
     corregirText();
@@ -473,28 +452,38 @@ function storeAnswerCheckbox(item_elem) {
 //****************************************************************************************************
 
 function corregirText() {
-	resp_text_1 = evaluateText(sol_text_1, "sol_text_1", "text_1");
-	resp_text_2 = evaluateText(sol_text_2, "sol_text_2", "text_2");
+	//resp_text_1 = evaluateText(sol_text_1, "sol_text_1", "text_1");
+	//resp_text_2 = evaluateText(sol_text_2, "sol_text_2", "text_2");
+	resp_text_1 = scoreText(sol_text_1, "item0", "text_1");
+	resp_text_2 = scoreText(sol_text_2, "item5", "text_2");
 }
 
 function corregirSelect() {
-	resp_select_1 = evaluateSelect(sol_select_1, "sol_select_1", "select_1");
-	resp_select_2 = evaluateSelect(sol_select_2, "sol_select_2", "select_2");
+	//resp_select_1 = evaluateSelect(sol_select_1, "sol_select_1", "select_1");
+	//resp_select_2 = evaluateSelect(sol_select_2, "sol_select_2", "select_2");
+	resp_select_1 = scoreSelect(sol_select_1, "item1", "select_1");
+	resp_select_2 = scoreSelect(sol_select_2, "item6", "select_2");
 }
 
 function corregirMultiple() {
-	resp_multiple_1 = evaluateMultiple(sol_multiple_1, "sol_multiple_1", "multiple_1");
-	resp_multiple_2 = evaluateMultiple(sol_multiple_2, "sol_multiple_2", "multiple_2");
+	//resp_multiple_1 = evaluateMultiple(sol_multiple_1, "sol_multiple_1", "multiple_1");
+	//resp_multiple_2 = evaluateMultiple(sol_multiple_2, "sol_multiple_2", "multiple_2");
+	resp_multiple_1 = scoreMultiple(sol_multiple_1, "item2", "multiple_1");
+	resp_multiple_2 = scoreMultiple(sol_multiple_2, "item7", "multiple_2");
 }
 
 function corregirRadio() {
-	resp_radio_1 = evaluateRadio(sol_radio_1, "sol_radio_1", "radio_1");
-	resp_radio_2 = evaluateRadio(sol_radio_2, "sol_radio_2", "radio_2");
+	//resp_radio_1 = evaluateRadio(sol_radio_1, "sol_radio_1", "radio_1");
+	//resp_radio_2 = evaluateRadio(sol_radio_2, "sol_radio_2", "radio_2");
+	resp_radio_1 = scoreRadio(sol_radio_1, "item3", "radio_1");
+	resp_radio_2 = scoreRadio(sol_radio_2, "item8", "radio_2");
 }
 
 function corregirCheckbox() {
-	resp_checkbox_1 = evaluateCheckbox(sol_checkbox_1, "sol_checkbox_1", "checkbox_1");
-	resp_checkbox_2 = evaluateCheckbox(sol_checkbox_2, "sol_checkbox_2", "checkbox_2");
+	//resp_checkbox_1 = evaluateCheckbox(sol_checkbox_1, "sol_checkbox_1", "checkbox_1");
+	//resp_checkbox_2 = evaluateCheckbox(sol_checkbox_2, "sol_checkbox_2", "checkbox_2");
+	resp_checkbox_1 = scoreCheckbox(sol_checkbox_1, "item4", "checkbox_1");
+	resp_checkbox_2 = scoreCheckbox(sol_checkbox_2, "item9", "checkbox_2");
 }
 
 //****************************************************************************************************
@@ -600,6 +589,99 @@ function evaluateCheckbox(correct_checkbox, sol_elem, frm_elem) {
 	}
 	return resp_checkbox;
 }
+//****************************************************************************************************
+
+//****************************************************************************************************
+// scoreX functions (correct_solution_variable, answer_store_XML_element, form_element)
+//****************************************************************************************************
+
+function scoreText(correct_text, ans_XML_elem, frm_elem) {
+	resp_text = document.getElementById(frm_elem).value;
+	resp_text = resp_text.toLowerCase();
+	if (resp_text == correct_text) {
+		calcPuntuacion('1', '1');
+	}
+	var useranswer = xmlDoc.createElement("useranswer");
+	useranswer.innerHTML = resp_text;
+	xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
+	return resp_text;
+}
+
+function scoreSelect(correct_select, ans_XML_elem, frm_elem) {
+	resp_select = -1;
+	resp_select = document.getElementById(frm_elem).selectedIndex;
+	if (resp_select == correct_select) {
+		calcPuntuacion('1', '1');
+	}
+	var useranswer = xmlDoc.createElement("useranswer");
+	useranswer.innerHTML = resp_text;
+	xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
+	return resp_select;
+}
+
+function scoreMultiple(correct_multiple, ans_XML_elem, frm_elem) {
+    	var isright = [];
+	resp_multiple = "";
+	multiple_q = document.getElementById(frm_elem);
+	multiple_o = multiple_q.getElementsByTagName('option');
+	multiple_o_length = multiple_o.length;
+	for (i = 0; i < multiple_o_length; i++) {
+		if (multiple_o[i].selected) {
+			var useranswer = xmlDoc.createElement("useranswer");
+			useranswer.innerHTML = i;
+			xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
+			isright[i]=false;
+			for (j=0; j < correct_multiple.length; j++) {
+				if (i == correct_multiple[j]) isright[i]=true;
+			}
+			if (isright[i]) {calcPuntuacion('1', correct_multiple.length);}
+			else {calcPuntuacion('-1', correct_multiple.length);}
+		}
+	}
+	return resp_multiple;
+}
+
+function scoreRadio(correct_radio, ans_XML_elem, frm_elem) {
+    resp_radio = -1;
+	radio_q = document.getElementById(frm_elem);
+	radio_o = radio_q.getElementsByTagName('input');
+	radio_o_length = radio_o.length;
+	for (i = 0; i < radio_o_length; i++) {
+		if (radio_o[i].checked) { //if this radio button is checked
+			resp_radio = radio_o[i].value;
+		}
+	}
+	if (resp_radio == correct_radio) {
+		calcPuntuacion('1', '1');
+	}
+	var useranswer = xmlDoc.createElement("useranswer");
+	useranswer.innerHTML = resp_text;
+	xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
+	return resp_radio;
+}
+
+function scoreCheckbox(correct_checkbox, ans_XML_elem, frm_elem) {
+    	var isright = [];
+	resp_checkbox = "";
+	checkbox_q = document.getElementById(frm_elem);
+	checkbox_o = checkbox_q.getElementsByTagName('input');
+	checkbox_o_length = checkbox_o.length;
+	for (i = 0; i < checkbox_o_length; i++) {
+		if (checkbox_o[i].checked) {
+			var useranswer = xmlDoc.createElement("useranswer");
+			useranswer.innerHTML = i;
+			xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
+			isright[i]=false;
+			for (j=0; j < correct_checkbox.length; j++) {
+				if (i == correct_checkbox[j]) isright[i]=true;
+			}
+			if (isright[i]) {calcPuntuacion('1', correct_checkbox.length);}
+			else {calcPuntuacion('-1', correct_checkbox.length);}
+		}
+	}
+	return resp_checkbox;
+}
+//****************************************************************************************************
 
 function showScore() {
 
@@ -649,4 +731,8 @@ function informError(er) {
 
 function resetPuntuacion() {
 	score = 0.0;
+}
+
+function calcPuntuacion(signo, base) {
+	score += (signo / base);
 }
