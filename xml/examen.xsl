@@ -52,9 +52,7 @@
 	    </xsl:if>
 	  </xsl:for-each>
           <br/>
-
 	  </xsl:if>
-
 	</xsl:for-each>
       </td>
       <td>
@@ -78,6 +76,9 @@
 <!--	          <span class='correct'>✓</span>   -->
 <!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
+	        </xsl:if>
+	        <xsl:if test="$useranswers!=$correctanswer">
+	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	        </xsl:if>
 	      </xsl:otherwise>
 	    </xsl:choose>
