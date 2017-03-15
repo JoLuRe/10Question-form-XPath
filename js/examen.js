@@ -130,6 +130,16 @@ window.onload = function () {
 	xhttp.open("GET", "xml/examen.xml", true);
 	xhttp.send();
 
+	//Leemos XSL de examen.xml
+	var xhttp2 = new XMLHttpRequest();
+	xhttp2.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			xslDoc=this.responseXML;
+		}
+	};
+	xhttp2.open("GET", "xml/examen.xsl", true);
+	xhttp2.send();
+
     var now = new Date().getTime();
     var limit = now + quiz_time;
 
