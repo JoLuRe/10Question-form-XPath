@@ -11,6 +11,8 @@ var xmlDoc = null;
 var xslDoc = null;
 // puntuacion
 var score = 0.0;
+// precision de la nota
+prec = 1;
 
 // primera pregunta no respondida
 var ppnr = "";
@@ -713,15 +715,15 @@ function showScore() {
 	//  ;    
 	// alert('Puntuación obtenida: ' + score + ' / ' + numpreg);
 
-   document.getElementById('nota').style.display = "block";
+   document.getElementById('panel').style.display = "block";
    //Codigo transformacion xslt con xmlDoc y xslDoc
    if (document.implementation && document.implementation.createDocument) {
         xsltProcessor = new XSLTProcessor();
         xsltProcessor.importStylesheet(xslDoc);
         resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
-        document.getElementById('nota').appendChild(resultDocument);
+        document.getElementById('panel').appendChild(resultDocument);
    }
-    //document.getElementById("nota").innerHTML = "Score " + score + " / " + numpreg;
+    //document.getElementById("nota").innerHTML = "Score " + score.toFixed(prec) + " / " + numpreg;
     scroll(0,0);
 
    //bloquear formulario (recargar para volver a empezar)
