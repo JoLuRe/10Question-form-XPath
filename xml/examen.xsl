@@ -68,6 +68,11 @@
 <!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
+
+	      <xsl:if test="$useranswers!=$correctanswer">
+	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
+	      </xsl:if>
+		      
     	      </xsl:when>
 	      <xsl:otherwise>
 <!--	        <xsl:variable name="correctanswer" select="text()+1"/>   -->
@@ -77,13 +82,15 @@
 <!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
-	        <xsl:if test="$useranswers!=$correctanswer">
-	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
-	        </xsl:if>
 	      </xsl:otherwise>
 	    </xsl:choose>
 	  </xsl:for-each>
-          <br/>
+
+	        <xsl:if test="$useranswers!=$correctanswer">
+	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
+	        </xsl:if>
+		
+	<br/>
 	</xsl:for-each>
       </td>
     </tr>
