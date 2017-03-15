@@ -734,7 +734,7 @@ function showScore() {
         document.getElementById('panel').appendChild(resultDocument);
    }
     //document.getElementById("nota").innerHTML = "Score " + score.toFixed(prec) + " / " + numpreg;
-    scroll(0,0);
+    //scroll(0,0);
 
    //bloquear formulario (recargar para volver a empezar)
    var f=formElement;
