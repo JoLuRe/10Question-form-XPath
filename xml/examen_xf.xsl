@@ -12,18 +12,18 @@
     <link rel="stylesheet" type="text/css" media='screen and (max-width: 960px)' href='../css/xslexamenm.css'></link>
   </head>
   <body>
-  <h2>Hollywood University correction sheet</h2>
+  <h2>Hollywood University cheat sheet</h2>
   <table>
     <tr>
       <th>Questions</th>
-      <th>Options and Solutions</th>
-      <th>Answers</th>
+      <th>Options</th>
+      <th>Solutions</th>
     </tr>
     <xsl:for-each select="quiz/question">
     <tr>
       <td><xsl:value-of select="title"/></td>
       <td>
-	<xsl:for-each select="answer">
+<!--	<xsl:for-each select="answer">
 	  <xsl:choose>
 	    <xsl:when test="../type = 'text'">
 	      <span>
@@ -42,42 +42,29 @@
 	  <xsl:value-of select="text()"/>
 	  <xsl:for-each select="../answer">
 	    <xsl:variable name="correctanswer" select="text()"/>
-	    <xsl:if test="$optposition=$correctanswer">
+	    <xsl:if test="$optposition=$correctanswer">   -->
 <!--	      <span class='correct'>✓</span>   -->
-	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>
+<!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>
 	    </xsl:if>
 	  </xsl:for-each>
           <br/>
 
 	  </xsl:if>
 
-	</xsl:for-each>
+	</xsl:for-each>  -->
+
+         <xsl:for-each select="option">
+          <xsl:value-of select="position()-1"/>: <xsl:value-of select="text()"/><br/>
+         </xsl:for-each>
+
       </td>
       <td>
-	<xsl:for-each select="useranswer">
-	  <xsl:variable name="useranswers" select="text()"/>
-	  <xsl:value-of select="text()"/>
-	  <xsl:for-each select="../answer">
-	    <xsl:choose>
-	      <xsl:when test="../type = 'text'">
-	        <xsl:variable name="correctanswertext" select="text()"/>
-	        <xsl:if test="$useranswers=$correctanswertext">
-<!--	          <span class='correct'>✓</span>   -->
-	          <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>
-	        </xsl:if>
-    	      </xsl:when>
-	      <xsl:otherwise>
-	        <xsl:variable name="correctanswer" select="text()+1"/>
-	        <xsl:if test="$useranswers=$correctanswer">
-<!--	          <span class='correct'>✓</span>   -->
-	          <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>
-	        </xsl:if>
-	      </xsl:otherwise>
-	    </xsl:choose>
-	  </xsl:for-each>
-          <br/>
-	</xsl:for-each>
+       <xsl:for-each select="answer">
+	<xsl:value-of select="text()"/>
+	<br/>
+       </xsl:for-each>       
       </td>
+
     </tr>
     </xsl:for-each>
   </table>
