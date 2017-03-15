@@ -628,7 +628,7 @@ function scoreSelect(correct_select, ans_XML_elem, frm_elem) {
 		calcPuntuacion('1', '1');
 	}
 	var useranswer = xmlDoc.createElement("useranswer");
-	useranswer.innerHTML = resp_text;
+	useranswer.innerHTML = resp_select;
 	xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
 	return resp_select;
 }
@@ -669,7 +669,7 @@ function scoreRadio(correct_radio, ans_XML_elem, frm_elem) {
 		calcPuntuacion('1', '1');
 	}
 	var useranswer = xmlDoc.createElement("useranswer");
-	useranswer.innerHTML = resp_text;
+	useranswer.innerHTML = resp_radio;
 	xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
 	return resp_radio;
 }
