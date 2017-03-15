@@ -713,7 +713,7 @@ function showScore() {
 	//  ;    
 	// alert('Puntuación obtenida: ' + score + ' / ' + numpreg);
 
-   //document.getElementById('resultadosDiv').style.display = "block";
+   document.getElementById('nota').style.display = "block";
    //Codigo transformacion xslt con xmlDoc y xslDoc
    if (document.implementation && document.implementation.createDocument) {
         xsltProcessor = new XSLTProcessor();
@@ -721,7 +721,7 @@ function showScore() {
         resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
         document.getElementById('nota').appendChild(resultDocument);
    }
-    document.getElementById("nota").innerHTML = "Score " + score + " / " + numpreg;
+    //document.getElementById("nota").innerHTML = "Score " + score + " / " + numpreg;
     scroll(0,0);
 
    //bloquear formulario (recargar para volver a empezar)
