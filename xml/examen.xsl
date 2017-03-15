@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" media='screen and (max-width: 960px)' href='../css/xslexamenm.css'></link>
   </head>
   <body>
-  <h2>Hollywood University cheat sheet</h2>
+  <h2>Hollywood University correction sheet</h2>
   <table>
     <tr>
       <th>Questions</th>
