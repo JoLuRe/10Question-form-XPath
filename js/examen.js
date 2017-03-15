@@ -7,6 +7,8 @@ var numpreg = 10;
 var formElement = null;
 // almacena el fichero de datos XML
 var xmlDoc = null;
+// almacena el fichero de transformacion XSL
+var xslDoc = null;
 // puntuacion
 var score = 0.0;
 
@@ -252,9 +254,9 @@ function doCorrect() {
     corregirMultiple();
     corregirRadio();
     corregirCheckbox();
-    //showScore();
-    document.getElementById("nota").innerHTML = "Score " + score + " / " + numpreg;
-    scroll(0,0);
+    showScore();
+    //document.getElementById("nota").innerHTML = "Score " + score + " / " + numpreg;
+    //scroll(0,0);
 }    
 
 //Read XML data (title, answer options and correct answers)
@@ -709,7 +711,27 @@ function showScore() {
 	//	' resp_radio_2: ' + resp_radio_2 +
 	//	' resp_checkbox_2: ' + resp_checkbox_2 + "<br/>" + "<br/>"
 	//  ;    
-	alert('Puntuación obtenida: ' + score + ' / ' + numpreg);
+	// alert('Puntuación obtenida: ' + score + ' / ' + numpreg);
+
+   //document.getElementById('resultadosDiv').style.display = "block";
+   //Codigo transformacion xslt con xmlDoc y xslDoc
+   if (document.implementation && document.implementation.createDocument) {
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xslDoc);
+        resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
+        document.getElementById('nota').appendChild(resultDocument);
+   }
+    document.getElementById("nota").innerHTML = "Score " + score + " / " + numpreg;
+    scroll(0,0);
+
+   //bloquear formulario (recargar para volver a empezar)
+   var f=formElement;
+   var e = f.elements;
+   //var len = formElement.elements.length;
+   for (var i = 0, len = e.length; i < len; ++i) {
+    e[i].disabled = true;
+   }
+
 }
 //****************************************************************************************************
 function informSuccess(su) {
