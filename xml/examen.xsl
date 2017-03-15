@@ -8,8 +8,10 @@
 <!--    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 -->
-    <link rel="stylesheet" type="text/css" media='screen and (min-width: 961px)' href='../css/xslexamend.css'></link>
-    <link rel="stylesheet" type="text/css" media='screen and (max-width: 960px)' href='../css/xslexamenm.css'></link>
+<!--    <link rel="stylesheet" type="text/css" media='screen and (min-width: 961px)' href='../css/xslexamend.css'></link>
+    <link rel="stylesheet" type="text/css" media='screen and (max-width: 960px)' href='../css/xslexamenm.css'></link>   -->
+    <link rel="stylesheet" type="text/css" media='screen and (min-width: 961px)' href='css/xslexamend.css'></link>
+    <link rel="stylesheet" type="text/css" media='screen and (max-width: 960px)' href='css/xslexamenm.css'></link>
   </head>
   <body>
   <h2>Hollywood University correction sheet</h2>
