@@ -386,8 +386,8 @@ function fillOptions_Radio_Checkbox(rad_chk_elem, item_elem, rc_type) {
 		var br = document.createElement("br");
 		//label.innerHTML = xml_select.getElementsByTagName('option')[i].childNodes[0].nodeValue;
 		label.innerHTML = result.innerHTML;
-		//label.setAttribute("for", i);
-		label.setAttribute("for", nopciones);
+		label.setAttribute("for", rad_chk_elem + "_" + nopciones);
+		//label.setAttribute("for", nopciones);
 		input.type = rc_type;
 		input.name = rad_chk_elem;
 		//input.id = rad_chk_elem + "_" + i;
