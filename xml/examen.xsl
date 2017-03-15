@@ -35,6 +35,7 @@
 	  </xsl:choose>
 	</xsl:for-each>
 	<xsl:for-each select="option">
+<!--	  <xsl:variable name="optposition" select="position()-1"/>   -->
 	  <xsl:variable name="optposition" select="position()-1"/>
 
           <xsl:variable name="optiontext" select="text()"/>
@@ -71,7 +72,8 @@
 	        </xsl:if>
     	      </xsl:when>
 	      <xsl:otherwise>
-	        <xsl:variable name="correctanswer" select="text()+1"/>
+<!--	        <xsl:variable name="correctanswer" select="text()+1"/>   -->
+	        <xsl:variable name="correctanswer" select="text()"/>
 	        <xsl:if test="$useranswers=$correctanswer">
 <!--	          <span class='correct'>✓</span>   -->
 <!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
