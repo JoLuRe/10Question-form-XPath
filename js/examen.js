@@ -99,6 +99,7 @@ window.onload = function () {
            //formElement.elements[parseInt(ppnr) - 1].focus();
            //formElement.getElementById['q' + parseInt(ppnr) - 1].focus();
            alert("Preguntas no respondidas: " + pnr);
+	   //document.getElementById('q' + ppnr-1).focus();
            return false;
        }
 	   else {
@@ -198,7 +199,6 @@ function ammend_pnr_counter(pntr) {
 	else {
 	pnr += ', ' + pntr;
 	}
-	//document.getElementById('q' + ppnr-1).focus();
 }
 
 function check_if_answerText(form_elem, nump) {
