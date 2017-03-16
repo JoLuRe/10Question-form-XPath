@@ -1,4 +1,4 @@
-﻿// **********************************
+// **********************************
 //      DEFINICION de VARIABLES
 // **********************************
 // número de preguntas de examen.xml
@@ -198,6 +198,7 @@ function ammend_pnr_counter(pntr) {
 	else {
 	pnr += ', ' + pntr;
 	}
+	document.getElementById('q' + ppnr-1).focus();
 }
 
 function check_if_answerText(form_elem, nump) {
