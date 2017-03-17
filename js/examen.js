@@ -12,7 +12,7 @@ var xslDoc = null;
 // puntuacion
 var score = 0.0;
 // precision de la nota
-prec = 1;
+var prec = 1;
 
 // primera pregunta no respondida
 var ppnr = "";
