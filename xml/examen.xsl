@@ -86,10 +86,10 @@
 	    </xsl:choose>
 	  </xsl:for-each>
 
-	        <xsl:if test="$useranswers!=$correctanswer">
+<!--	        <xsl:if test="$useranswers!=$correctanswer">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	        </xsl:if>
-		
+-->		
 	<br/>
 	</xsl:for-each>
       </td>
