@@ -29,7 +29,7 @@ the examen form has a comprehensive JS script which takes care of the dynamics o
 
 JS enforces answering each question, provided that we are within the time limit
 
-If time runs out, auto-correction is triggered no matter how many questions are or are not answered.
+If time runs out, auto-correction is triggered no matter how many questions are answered or not.
 
 See the **doc**umentation folder for a detailed list of all micro-tasks included in this project.
 _Master_ branch is minified while _Indented_ branch is indented. Both branches are checked and validated
