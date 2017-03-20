@@ -69,10 +69,10 @@
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
 
-	      <xsl:if test="$useranswers!=$correctanswer">
+<!--	      <xsl:if test="$useranswers!=$correctanswer">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	      </xsl:if>
-		      
+-->		      
     	      </xsl:when>
 	      <xsl:otherwise>
 <!--	        <xsl:variable name="correctanswer" select="text()+1"/>   -->
