@@ -54,15 +54,16 @@
 	  </xsl:if>
 	</xsl:for-each>
       </td>
-<!-- Answerss and correct ones  -->	    
+<!-- Answers and correct ones  -->	    
       <td>
 	<xsl:for-each select="useranswer">
 	  <xsl:variable name="useranswers" select="text()"/>
 	  <xsl:value-of select="text()"/>
 	  <xsl:for-each select="../answer">
 	    <xsl:choose>
-<!-- answers type TEXT  -->		    
-	      <xsl:when test="../type = 'text'">
+<!-- answers type TEXT  -->
+<!--	      <xsl:when test="../type = 'text'">    -->
+	      <xsl:when test="(../type = 'text') or (../type = 'select') or (../type = 'radio')">
 	        <xsl:variable name="correctanswertext" select="text()"/>
 	        <xsl:if test="$useranswers=$correctanswertext">
 <!-- show correct sign -->
