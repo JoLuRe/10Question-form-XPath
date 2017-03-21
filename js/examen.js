@@ -283,8 +283,8 @@ function doCorrect() {
     corregirRadio();
     corregirCheckbox();
     showScore();
-    //document.getElementById("nota").innerHTML = "Score " + score + " / " + numpreg;
-    //scroll(0,0);
+    tosee = document.getElementById('reloj_stopped');
+    tosee.scrollIntoView();
 }    
 
 //Read XML data (title, answer options and correct answers)
