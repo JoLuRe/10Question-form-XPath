@@ -175,6 +175,21 @@ window.onload = function () {
 // **********************************
 //      DEFINICION de FUNCION
 // **********************************
+window.onmousedown = function (e) {
+    var el = e.target;
+    if (el.tagName.toLowerCase() == 'option' && el.parentNode.hasAttribute('multiple')) {
+        e.preventDefault();
+
+        // toggle selection
+        if (el.hasAttribute('selected')) el.removeAttribute('selected');
+        else el.setAttribute('selected', '');
+
+        // hack to correct buggy behavior
+        var select = el.parentNode.cloneNode(true);
+        el.parentNode.parentNode.replaceChild(select, el.parentNode);
+    }
+}
+
 function check_if_all_answers() {
     check_if_answerText('text_1', '1');	
     check_if_answerSelect('select_1', '2');	
@@ -734,7 +749,7 @@ function showScore() {
         resultDocument = xsltProcessor.transformToFragment(xmlDoc, document);
         document.getElementById('panel').appendChild(resultDocument);
    }
-    //document.getElementById("nota").innerHTML = "Score " + score.toFixed(prec) + " / " + numpreg;
+    document.getElementById("nota").innerHTML = "Score " + score.toFixed(prec) + " / " + numpreg;
     //scroll(0,0);
 
    //bloquear formulario (recargar para volver a empezar)
