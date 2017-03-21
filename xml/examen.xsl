@@ -58,7 +58,7 @@
       <td>
 	<xsl:for-each select="useranswer">
 	  <xsl:variable name="useranswers" select="text()"/>
-<!--	  <xsl:value-of select="text()"/>    -->
+	  <xsl:value-of select="text()"/>
 	  <xsl:for-each select="../answer">
 	    <xsl:choose>
 <!-- answers type TEXT  -->		    
@@ -70,10 +70,10 @@
 <!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
-<!-- show INcorrect sign  		      
-	      <xsl:if test="$useranswers!=$correctanswer">
+<!-- show INcorrect sign  	-->	      
+	      <xsl:if test="$useranswers!=$correctanswertext">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
-	      </xsl:if>   -->
+	      </xsl:if>   
     	      </xsl:when>
 <!-- answers type different from TEXT  -->		    
 	      <xsl:otherwise>
