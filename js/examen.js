@@ -96,10 +96,10 @@ window.onload = function () {
 	   pnr = '';
 	   check_if_all_answers();	
 	   if (ppnr !== '') {
-           //formElement.elements[parseInt(ppnr) - 1].focus();
-           //formElement.getElementById['q' + parseInt(ppnr) - 1].focus();
            alert("Preguntas no respondidas: " + pnr);
-	   //document.getElementById('q' + ppnr-1).focus();
+           var idx = ppnr - 1;
+           penr = document.getElementById('q' + idx);
+           penr.scrollIntoView();
            return false;
        }
 	   else {
