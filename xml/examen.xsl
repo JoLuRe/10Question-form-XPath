@@ -24,9 +24,11 @@
     <xsl:for-each select="quiz/question">
     <tr>
       <td><xsl:value-of select="title"/></td>
+<!-- Options and correct ones  -->
       <td>
 	<xsl:for-each select="answer">
 	  <xsl:choose>
+<!-- options type TEXT  -->
 	    <xsl:when test="../type = 'text'">
 	      <span>
 	        <xsl:value-of select="text()"/>
@@ -34,14 +36,11 @@
 	    </xsl:when>
 	  </xsl:choose>
 	</xsl:for-each>
+<!-- options type different from TEXT  -->
 	<xsl:for-each select="option">
-<!--	  <xsl:variable name="optposition" select="position()-1"/>   -->
 	  <xsl:variable name="optposition" select="position()-1"/>
-
           <xsl:variable name="optiontext" select="text()"/>
 	  <xsl:if test="$optiontext!=''">
-
-
 	  <xsl:value-of select="text()"/>
 	  <xsl:for-each select="../answer">
 	    <xsl:variable name="correctanswer" select="text()"/>
@@ -55,37 +54,40 @@
 	  </xsl:if>
 	</xsl:for-each>
       </td>
+<!-- Answerss and correct ones  -->	    
       <td>
 	<xsl:for-each select="useranswer">
 	  <xsl:variable name="useranswers" select="text()"/>
 	  <xsl:value-of select="text()"/>
 	  <xsl:for-each select="../answer">
 	    <xsl:choose>
+<!-- answers type TEXT  -->		    
 	      <xsl:when test="../type = 'text'">
 	        <xsl:variable name="correctanswertext" select="text()"/>
 	        <xsl:if test="$useranswers=$correctanswertext">
-<!--	          <span class='correct'>✓</span>   -->
+<!-- show correct sign -->
+<!--	      <span class='correct'>✓</span>   -->
 <!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
-
-<!--	      <xsl:if test="$useranswers!=$correctanswer">
+<!-- show INcorrect sign  -->		      
+	      <xsl:if test="$useranswers!=$correctanswer">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	      </xsl:if>
--->		      
     	      </xsl:when>
+<!-- answers type different from TEXT  -->		    
 	      <xsl:otherwise>
 <!--	        <xsl:variable name="correctanswer" select="text()+1"/>   -->
 	        <xsl:variable name="correctanswer" select="text()"/>
 	        <xsl:if test="$useranswers=$correctanswer">
-<!--	          <span class='correct'>✓</span>   -->
+<!-- show correct sign -->			
+<!--	      <span class='correct'>✓</span>   -->
 <!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
 	      </xsl:otherwise>
 	    </xsl:choose>
 	  </xsl:for-each>
-
 <!--	        <xsl:if test="$useranswers!=$correctanswer">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	        </xsl:if>
