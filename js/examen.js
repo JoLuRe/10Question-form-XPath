@@ -114,7 +114,7 @@ window.onload = function () {
            else {fmn = mn;}      
            if (sc < 10) {fsc= "0" + sc;}
            else {fsc = sc;}              
-           document.getElementById("reloj").innerHTML = "Remaining time " + fmn + ":" + fsc;		
+           document.getElementById("reloj_stopped").innerHTML = "Remaining time " + fmn + ":" + fsc;		
            doCorrect();
            return false;
 	   }
@@ -165,7 +165,7 @@ window.onload = function () {
         // If the count down is finished... 
         if (remaining_time < 0) {
             clearInterval(clock_tick);
-            document.getElementById("reloj").innerHTML = "TIME FINISHED";
+            document.getElementById("reloj_stopped").innerHTML = "TIME FINISHED";
             doCorrect();
 	    return false;	  
         }
