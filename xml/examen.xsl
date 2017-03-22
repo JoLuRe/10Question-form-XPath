@@ -95,13 +95,13 @@
 -->
 
 <!--		<xsl:when test="(../type = 'multiple') or (../type = 'checkbox')">  -->
-		<xsl:when test="(../type = 'multiple')">
+<!--		<xsl:when test="(../type = 'multiple')">
 		<xsl:variable name="r_w" select="@rw"/>
 		<xsl:if test="$r_w='W'">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	        </xsl:if>
 		</xsl:when>
-		
+-->		
 	<br/>
 	</xsl:for-each>
       </td>
