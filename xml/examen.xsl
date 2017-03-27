@@ -82,7 +82,7 @@
 	        <xsl:variable name="correctanswer" select="text()"/>
 
 <!--		      <xsl:if test="$useranswers=$correctanswer">    -->
-			<xsl:if test="@usercorrect='s'">
+			<xsl:if test="usercorrect='s'">
 				
 <!-- show correct sign -->			
 <!--	      <span class='correct'>✓</span>   -->
@@ -90,7 +90,7 @@
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
 		      
-	<xsl:if test="@usercorrect='n'">
+	<xsl:if test="usercorrect='n'">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	</xsl:if>
 
