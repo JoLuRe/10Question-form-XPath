@@ -98,6 +98,12 @@
 		</xsl:otherwise>
 	    </xsl:choose>
 	  </xsl:for-each>
+	<xsl:if test="usercorrect='s'">
+	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
+        </xsl:if>
+	<xsl:if test="usercorrect='n'">
+	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
+	</xsl:if>
 <!--	        <xsl:if test="$useranswers!=$correctanswer">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	        </xsl:if>
