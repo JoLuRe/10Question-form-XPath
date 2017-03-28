@@ -649,7 +649,7 @@ function scoreSelect(correct_select, ans_XML_elem, frm_elem) {
 	return resp_select;
 }
 
-function scoreMultiple_original(correct_multiple, ans_XML_elem, frm_elem) {
+function scoreMultiple(correct_multiple, ans_XML_elem, frm_elem) {
     	var isright = [];
 	resp_multiple = "";
 	multiple_q = document.getElementById(frm_elem);
@@ -671,7 +671,7 @@ function scoreMultiple_original(correct_multiple, ans_XML_elem, frm_elem) {
 	return resp_multiple;
 }
 
-function scoreMultiple(correct_multiple, ans_XML_elem, frm_elem) {
+function scoreMultiple_test(correct_multiple, ans_XML_elem, frm_elem) {
     	var isright = [];
 	resp_multiple = "";
 	multiple_q = document.getElementById(frm_elem);
