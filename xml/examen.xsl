@@ -100,7 +100,7 @@
 	</xsl:if>
 	</xsl:if>
 -->
- <!-- <br/>  -->
+ <br/>
 	</xsl:for-each>
       </td>
     </tr>
