@@ -1,0 +1,43 @@
+table {
+	width: 100%;
+	border: 1px solid;
+}
+
+th {
+	/*  background-color:#cdd8f6;  */
+	background-color: darkblue;
+	color: cyan;
+}
+
+td, tr, th {
+	border: 1px solid;
+	padding: 2px;
+	vertical-align: top;
+}
+
+table tr:nth-child(even) {
+	background-color: #eee;
+}
+
+table tr:nth-child(odd) {
+	background-color: #fff;
+}
+
+span {
+	/*  color:green;  */
+	padding-left: 5px;
+}
+
+.correct {
+	color: green;
+	font-weight: bolder;
+}
+
+.incorrect {
+	color: red;
+}
+
+img {
+	display: inline-block;
+	vertical-align: middle;
+}

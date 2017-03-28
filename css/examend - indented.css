@@ -1,0 +1,112 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+}
+
+.examen, header {
+	margin: 1% 10% 3% 10%;
+	font-family: calibri, sans-serif;
+	font-style: normal;
+	/*	font-size: 18px;  */
+	font-size: 1.0vw;
+	background-color: #8debff;
+	border-radius: 10px;
+}
+
+header {
+	font-family: calibri, sans-serif;
+	font-weight: bold;
+	/*	font-size: 38px;   */
+	font-size: 2.8vw;
+	background-color: #638baf;
+	vertical-align: middle;
+}
+
+header img, header div {
+	margin: 1% 2% 1% 2%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.leyenda {
+	font-style: normal;
+	/*	font-size: 28px;  */
+	font-size: 2.3vw;
+	font-weight: bold;
+	text-align: right;
+	color: #76838f;
+}
+
+.question {
+	margin-bottom: 1%;
+	margin: 1% 20% 1% 20%;
+	font-weight: bold;
+	color: yellow;
+}
+
+.question:hover {
+	font-weight: bold;
+	color: yellow;
+	background-color: brown;
+	border: 2px solid yellow;
+	border-left: 5px solid yellow;
+	border-right: 5px solid yellow;
+	border-radius: 10px;
+}
+
+.impar, .par {
+	color: white;
+	background-color: black;
+	border: 2px solid white;
+	border-left: 5px solid white;
+	border-right: 5px solid white;
+	border-radius: 10px;
+}
+
+.text, .mlist, .checkbox, .list, .radio {
+	margin: 1% 20% 1% 20%;
+}
+
+.correction {
+	margin: 1% 0% 1% 20%;
+}
+
+.solution, .correction {
+	display: none;
+	vertical-align: middle;
+}
+
+.solution, span {
+	color: black;
+	/*	font-size: 16px;  */
+	font-size: 1.0vw;
+	/*	font-weight: bold;  */
+	margin: 1% 0% 1% 0%;
+}
+
+label, input, option, select {
+	/*	font-size: 18px;   */
+	font-size: 1.0vw;
+}
+
+.submit {
+	border-radius: 5px;
+	margin: 0% 50%;
+}
+
+#reloj {
+	/*	font-size: 42px;   */
+	font-size: 3.0vw;
+	margin: auto;
+	vertical-align: middle;
+	color: white;
+}
+
+#reloj_stopped, #nota {
+	font-weight: bold;
+	font-size: 2.0vw;
+	margin: auto;
+	vertical-align: middle;
+	color: black;
+}
