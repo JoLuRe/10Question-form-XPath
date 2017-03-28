@@ -8,6 +8,8 @@
 <!--    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 -->
+<!--    <link rel="stylesheet" type="text/css" media='screen and (min-width: 961px)' href='../css/xslexamend.css'></link>
+    <link rel="stylesheet" type="text/css" media='screen and (max-width: 960px)' href='../css/xslexamenm.css'></link>   -->
     <link rel="stylesheet" type="text/css" media='screen and (min-width: 961px)' href='css/xslexamend.css'></link>
     <link rel="stylesheet" type="text/css" media='screen and (max-width: 960px)' href='css/xslexamenm.css'></link>
   </head>
@@ -43,6 +45,8 @@
 	  <xsl:for-each select="../answer">
 	    <xsl:variable name="correctanswer" select="text()"/>
 	    <xsl:if test="$optposition=$correctanswer">
+<!--	      <span class='correct'>✓</span>   -->
+<!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	    </xsl:if>
 	  </xsl:for-each>
@@ -56,30 +60,40 @@
 	  <xsl:variable name="useranswers" select="text()"/>
 	  <xsl:value-of select="text()"/>
 	  <xsl:for-each select="../answer">
-<!--	    <xsl:choose>  -->
-<!-- answers type TEXT, SELECT, RADIO  -->
-<!--	      <xsl:when test="(../type = 'text') or (../type = 'select') or (../type = 'radio')">   -->
+	    <xsl:choose>
+<!-- answers type TEXT  -->
+	      <xsl:when test="../type = 'text'">
+<!--	      <xsl:when test="(../type = 'text') or (../type = 'select') or (../type = 'radio')">  -->
 	        <xsl:variable name="correctanswertext" select="text()"/>
 	        <xsl:if test="$useranswers=$correctanswertext">
 <!-- show correct sign -->
+<!--	      <span class='correct'>✓</span>   -->
+<!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
 <!-- show INcorrect sign  		      
 	      <xsl:if test="$useranswers!=$correctanswertext">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	      </xsl:if>   
+-->
     	      </xsl:when>
-<!-- answers type different from TEXT, SELECT, RADIO  -->		    
-<!--	    </xsl:choose>   -->
-	  </xsl:for-each>
-<!--	<xsl:if test= "../type = 'multiple'">
-	<xsl:if test= "@usercorrect = 's'">
+<!-- answers type different from TEXT  -->		    
+	      <xsl:otherwise>
+<!--	        <xsl:variable name="correctanswer" select="text()+1"/>   -->
+	        <xsl:variable name="correctanswer" select="text()"/>
+	        <xsl:if test="$useranswers=$correctanswer">
+<!-- show correct sign -->			
+<!--	      <span class='correct'>✓</span>   -->
+<!--	      <span class='correct'><img src='../img/correct.png' alt='correct.png'/></span>   -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
-        </xsl:if>
-	<xsl:if test= "@usercorrect = 'n'">
-	      <span class = 'incorrect'><img src = 'img/incorrect.png' alt = 'incorrect.png'/></span>
-	</xsl:if>
-	</xsl:if>  -->
+	        </xsl:if>
+	      </xsl:otherwise>
+	    </xsl:choose>
+	  </xsl:for-each>
+<!--	        <xsl:if test="$useranswers!=$correctanswer">
+	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
+	        </xsl:if>
+-->		
 	<br/>
 	</xsl:for-each>
       </td>
