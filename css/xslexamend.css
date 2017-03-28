@@ -4,7 +4,7 @@ table{
 } 
 
 th{
-  //background-color:#cdd8f6;
+/*  background-color:#cdd8f6;  */
   background-color:darkblue;
   color:cyan;
 } 
@@ -21,7 +21,7 @@ table tr:nth-child(odd) {
     background-color: #fff;
 }
 span{
-//  color:green;
+/*  color:green;  */
   padding-left:5px;
 }
 
