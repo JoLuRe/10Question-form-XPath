@@ -649,7 +649,7 @@ function scoreSelect(correct_select, ans_XML_elem, frm_elem) {
 	return resp_select;
 }
 
-function scoreMultiple(correct_multiple, ans_XML_elem, frm_elem) {
+function scoreMultiple_original(correct_multiple, ans_XML_elem, frm_elem) {
     	var isright = [];
 	resp_multiple = "";
 	multiple_q = document.getElementById(frm_elem);
@@ -666,6 +666,47 @@ function scoreMultiple(correct_multiple, ans_XML_elem, frm_elem) {
 			}
 			if (isright[i]) {calcPuntuacion('1', correct_multiple.length);}
 			else {calcPuntuacion('-1', correct_multiple.length);}
+		}
+	}
+	return resp_multiple;
+}
+
+function scoreMultiple(correct_multiple, ans_XML_elem, frm_elem) {
+    	var isright = [];
+	resp_multiple = "";
+	multiple_q = document.getElementById(frm_elem);
+	multiple_o = multiple_q.getElementsByTagName('option');
+	multiple_o_length = multiple_o.length;
+	for (i = 0; i < multiple_o_length; i++) {
+		if (multiple_o[i].selected) {
+			var useranswer = xmlDoc.createElement("useranswer");
+			var usercorrect = xmlDoc.createElement("usercorrect");
+//			var usercorrect = xmlDoc.createAttribute("usercorrect");
+			useranswer.innerHTML = i;
+			//xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
+			isright[i]=false;
+			for (j=0; j < correct_multiple.length; j++) {
+				if (i == correct_multiple[j]) isright[i]=true;
+			}
+//			if (isright[i]) {calcPuntuacion('1', correct_multiple.length);}
+//			else {calcPuntuacion('-1', correct_multiple.length);}
+			if (isright[i]) {
+				calcPuntuacion('1', correct_multiple.length);
+//				usercorrect.nodeValue = 's';
+				usercorrect.innerHTML = 's';
+			} else {
+				calcPuntuacion('-1', correct_multiple.length);
+//				usercorrect.nodeValue = 'n';
+				usercorrect.innerHTML = 'n';
+			}
+			
+////			useranswer.setAttribute('usercorrect', 'n');
+//			useranswer.setAttributeNode(usercorrect);
+			useranswer.appendChild(usercorrect);
+			xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
+//			xmlDoc.getElementById(ans_XML_elem).getElementsByTagName("useranswer")[idx].setAttributeNode(usercorrect);
+//			xmlDoc.getElementById(ans_XML_elem).appendChild(useranswer);
+//			var idx = xmlDoc.getElementById(ans_XML_elem).lastIndexOf('useranswer');
 		}
 	}
 	return resp_multiple;
