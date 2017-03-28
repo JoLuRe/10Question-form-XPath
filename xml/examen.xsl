@@ -73,10 +73,10 @@
 	    </xsl:choose>
 	  </xsl:for-each>
 	<xsl:if test= "../type = 'multiple'">
-	<xsl:if test= "usercorrect = 's'">
+	<xsl:if test= "@usercorrect = 's'">
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
         </xsl:if>
-	<xsl:if test= "usercorrect = 'n'">
+	<xsl:if test= "@usercorrect = 'n'">
 	      <span class = 'incorrect'><img src = 'img/incorrect.png' alt = 'incorrect.png'/></span>
 	</xsl:if>
 	</xsl:if>
