@@ -56,30 +56,30 @@
 	  <xsl:variable name="useranswers" select="text()"/>
 	  <xsl:value-of select="text()"/>
 	  <xsl:for-each select="../answer">
-	    <xsl:choose>
+<!--	    <xsl:choose>  -->
 <!-- answers type TEXT, SELECT, RADIO  -->
-	      <xsl:when test="(../type = 'text') or (../type = 'select') or (../type = 'radio')">
+<!--	      <xsl:when test="(../type = 'text') or (../type = 'select') or (../type = 'radio')">   -->
 	        <xsl:variable name="correctanswertext" select="text()"/>
 	        <xsl:if test="$useranswers=$correctanswertext">
 <!-- show correct sign -->
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
 	        </xsl:if>
-<!-- show INcorrect sign  	-->	      
+<!-- show INcorrect sign  		      
 	      <xsl:if test="$useranswers!=$correctanswertext">
 	      <span class='incorrect'><img src='img/incorrect.png' alt='incorrect.png'/></span>
 	      </xsl:if>   
     	      </xsl:when>
 <!-- answers type different from TEXT, SELECT, RADIO  -->		    
-	    </xsl:choose>
+<!--	    </xsl:choose>   -->
 	  </xsl:for-each>
-	<xsl:if test= "../type = 'multiple'">
+<!--	<xsl:if test= "../type = 'multiple'">
 	<xsl:if test= "@usercorrect = 's'">
 	      <span class='correct'><img src='img/correct.png' alt='correct.png'/></span>
         </xsl:if>
 	<xsl:if test= "@usercorrect = 'n'">
 	      <span class = 'incorrect'><img src = 'img/incorrect.png' alt = 'incorrect.png'/></span>
 	</xsl:if>
-	</xsl:if>
+	</xsl:if>  -->
 	<br/>
 	</xsl:for-each>
       </td>
